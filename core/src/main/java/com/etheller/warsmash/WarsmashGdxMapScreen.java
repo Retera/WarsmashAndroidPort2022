@@ -28,6 +28,7 @@ import com.etheller.warsmash.datasources.CompoundDataSourceDescriptor;
 import com.etheller.warsmash.datasources.DataSource;
 import com.etheller.warsmash.datasources.DataSourceDescriptor;
 import com.etheller.warsmash.datasources.FolderDataSourceDescriptor;
+import com.etheller.warsmash.datasources.GdxDataSourceDescriptor;
 import com.etheller.warsmash.datasources.MpqDataSourceDescriptor;
 import com.etheller.warsmash.parsers.fdf.GameUI;
 import com.etheller.warsmash.parsers.jass.Jass2;
@@ -233,10 +234,10 @@ public class WarsmashGdxMapScreen implements InputProcessor, Screen {
 				dataSourcesList.add(new CascDataSourceDescriptor(path, Arrays.asList(prefixes.split(","))));
 				break;
 			}
-				case "GDX": {
-
-					break;
-				}
+			case "GDX": {
+				dataSourcesList.add(new GdxDataSourceDescriptor());
+				break;
+			}
 			default:
 				throw new RuntimeException("Unknown data source type: " + type);
 			}

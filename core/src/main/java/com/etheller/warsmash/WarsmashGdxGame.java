@@ -104,7 +104,7 @@ public class WarsmashGdxGame extends ApplicationAdapter implements CanvasProvide
 //            this.mainModel = (MdxModel) this.viewer.load("Doodads\\Cinematic\\ArthasIllidanFight\\The_Glow4.mdx",
 //                                    this.mainModel = (MdxModel) this.viewer.load("Doodads\\Cinematic\\ArthasIllidanFight\\ArthasIllidanFight.mdx",
 //            this.mainModel = (MdxModel) this.viewer.load("UI\\Glues\\SinglePlayer\\NightElf_Exp\\NightElf_Exp.mdx",
-                    this.mainModel = (MdxModel) this.viewer.load("UI\\Glues\\MainMenu\\MainMenu3D_Exp\\MainMenu3D_Exp.mdx",
+                    this.mainModel = (MdxModel) this.viewer.load("UI\\Glues\\MainMenu\\MainMenu3d_exp\\MainMenu3d_exp.mdx",
                     //		this.mainModel = (MdxModel) this.viewer.load("Abilities\\Spells\\Orc\\FeralSpirit\\feralspirittarget.mdx",
                     new PathSolver() {
                         @Override
@@ -427,7 +427,7 @@ public class WarsmashGdxGame extends ApplicationAdapter implements CanvasProvide
             this.mainInstance.frame += (int) (Gdx.graphics.getRawDeltaTime() * 1000);
         }
         if (this.firstFrame) {
-            final Music music = Gdx.audio.newMusic(Gdx.files.internal("FinalCinematic.mp3"));
+            final Music music = Gdx.audio.newMusic(Gdx.files.internal("Sound/Music/mp3Music/War3XMainScreen.mp3"));
 //                    new DataSourceFileHandle(this.viewer.dataSource,
 //                    "Sound\\Ambient\\DoodadEffects\\FinalCinematic.mp3"));
             music.setVolume(0.2f);

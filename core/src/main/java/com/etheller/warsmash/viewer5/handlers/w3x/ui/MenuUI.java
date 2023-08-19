@@ -6,6 +6,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -1948,7 +1949,7 @@ public class MenuUI {
 			}
 			this.currentMusics = new Music[musics.length];
 			for (int i = 0; i < musics.length; i++) {
-				final Music newMusic = Gdx.audio.newMusic(new DataSourceFileHandle(this.viewer.dataSource, musics[i]));
+				final Music newMusic = Gdx.audio.newMusic(Gdx.files.internal(musics[i].toLowerCase(Locale.US).replace('\\', '/')));
 				newMusic.setVolume(1.0f);
 				this.currentMusics[i] = newMusic;
 			}

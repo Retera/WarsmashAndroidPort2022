@@ -683,11 +683,11 @@ public class MdxComplexInstance extends ModelInstance {
 	@Override
 	public void setReplaceableTextureHD(final int replaceableTextureId, final String replaceableTextureFile) {
 		this.replaceableTextures_diffuse[replaceableTextureId] = (Texture) this.model.viewer
-				.load(replaceableTextureFile + "_diffuse.dds", PathSolver.DEFAULT, null);
+				.load(replaceableTextureFile + "_diffuse.png", PathSolver.DEFAULT, null);
 		this.replaceableTextures_normal[replaceableTextureId] = (Texture) this.model.viewer
-				.load(replaceableTextureFile + "_normal.dds", PathSolver.DEFAULT, null);
+				.load(replaceableTextureFile + "_normal.png", PathSolver.DEFAULT, null);
 		this.replaceableTextures_orm[replaceableTextureId] = (Texture) this.model.viewer
-				.load(replaceableTextureFile + "_orm.dds", PathSolver.DEFAULT, null);
+				.load(replaceableTextureFile + "_orm.png", PathSolver.DEFAULT, null);
 	}
 
 	/**

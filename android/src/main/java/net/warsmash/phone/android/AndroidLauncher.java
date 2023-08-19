@@ -7,6 +7,8 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.etheller.warsmash.WarsmashGdxGame;
+import com.etheller.warsmash.WarsmashGdxMenuScreen;
+import com.etheller.warsmash.WarsmashGdxMultiScreenGame;
 import com.etheller.warsmash.WarsmashTestGame;
 import com.etheller.warsmash.WarsmashTestGame2;
 import com.etheller.warsmash.WarsmashTestGameAttributes;
@@ -24,6 +26,7 @@ import net.warsmash.phone.WarsmashPhoneMain;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.function.Consumer;
 
 /** Launches the Android application. */
 public class AndroidLauncher extends AndroidApplication {
@@ -34,7 +37,12 @@ public class AndroidLauncher extends AndroidApplication {
 		configuration.useGL30 = true;
 //		DataTable dataTable = loadWarsmashIni();
 		loadExtensions();
-		initialize(new WarsmashGdxGame(null), configuration);
+		final WarsmashGdxMultiScreenGame warsmashGdxMultiScreenGame = new WarsmashGdxMultiScreenGame((Consumer<WarsmashGdxMultiScreenGame>) (game) -> {
+			final WarsmashGdxMenuScreen menuScreen = new WarsmashGdxMenuScreen(null,
+					game);
+			game.setScreen(menuScreen);
+		});
+		initialize(warsmashGdxMultiScreenGame, configuration);
 	}
 
 	public static void loadExtensions() {
@@ -75,7 +83,11 @@ public class AndroidLauncher extends AndroidApplication {
 			public void play(final Sound buffer, final float volume, final float pitch, final float x, final float y,
 							 final float z, final boolean is3dSound, final float maxDistance, final float refDistance,
 							 final boolean looping) {
-				buffer.play(volume, pitch, 0.0f);
+				if(looping) {
+					buffer.loop(volume, pitch, 0.0f);
+				} else {
+					buffer.play(volume, pitch, 0.0f);
+				}
 			}
 
 			@Override

@@ -1,6 +1,7 @@
 package com.etheller.warsmash.viewer5.handlers.w3x.rendersim;
 
 import java.util.EnumSet;
+import java.util.Locale;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
@@ -54,8 +55,8 @@ public class RenderDestructable extends RenderDoodad implements RenderWidget {
 				this.blighted = true;
 				this.replaceableTextureFile += "Blight";
 			}
-			this.instance.setReplaceableTexture(this.replaceableTextureId, this.replaceableTextureFile + ".blp");
-			this.instance.setReplaceableTextureHD(this.replaceableTextureId, this.replaceableTextureFile);
+			this.instance.setReplaceableTexture(this.replaceableTextureId, (this.replaceableTextureFile + ".png").toLowerCase(Locale.US));
+			this.instance.setReplaceableTextureHD(this.replaceableTextureId, this.replaceableTextureFile.toLowerCase(Locale.US));
 		}
 		this.selectionScale *= row.getFieldAsFloat(SEL_CIRCLE_SIZE, 0);
 		this.unitAnimationListenerImpl = new UnitAnimationListenerImpl((MdxComplexInstance) this.instance, 0, 0);
@@ -127,7 +128,7 @@ public class RenderDestructable extends RenderDoodad implements RenderWidget {
 			if (this.replaceableTextureFile != null) {
 				this.replaceableTextureFile += "Blight";
 			}
-			this.instance.setReplaceableTexture(this.replaceableTextureId, this.replaceableTextureFile + ".blp");
+			this.instance.setReplaceableTexture(this.replaceableTextureId, (this.replaceableTextureFile + ".blp").toLowerCase(Locale.US));
 		}
 		this.unitAnimationListenerImpl.update();
 	}

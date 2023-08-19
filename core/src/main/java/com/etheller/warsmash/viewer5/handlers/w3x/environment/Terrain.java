@@ -1324,6 +1324,7 @@ public class Terrain {
 				com.badlogic.gdx.graphics.Texture gdxTexture = texture.getGdxTexture();
 				TextureData textureData = gdxTexture.getTextureData();
 				if(!textureData.isPrepared()) {
+					System.out.println("prepare: " + texture.fetchUrl);
 					textureData.prepare();
 				}
 				Pixmap pixmap = textureData.consumePixmap();

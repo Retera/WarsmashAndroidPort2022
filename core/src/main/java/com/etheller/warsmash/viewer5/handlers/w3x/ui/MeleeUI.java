@@ -4055,7 +4055,7 @@ public class MeleeUI implements CUnitStateListener, CommandButtonListener, Comma
 			this.currentMusics = new Music[musics.length];
 			for (int i = 0; i < musics.length; i++) {
 				final Music newMusic = Gdx.audio
-						.newMusic(new DataSourceFileHandle(this.war3MapViewer.dataSource, musics[i]));
+						.newMusic(Gdx.files.internal(musics[i].toLowerCase(Locale.US).replace('\\', '/')));
 				newMusic.setVolume(1.0f);
 				this.currentMusics[i] = newMusic;
 			}

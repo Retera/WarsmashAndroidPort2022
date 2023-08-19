@@ -15,6 +15,7 @@ import java.util.Set;
 
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
 import com.etheller.interpreter.ast.scope.GlobalScope;
 import com.etheller.interpreter.ast.scope.trigger.RemovableTriggerEvent;
 import com.etheller.interpreter.ast.scope.trigger.Trigger;
@@ -301,9 +302,9 @@ public class CSimulation implements CPlayerAPI {
 	}
 
 	public void findNaiveSlowPath(final CUnit ignoreIntersectionsWithThisUnit,
-			final CUnit ignoreIntersectionsWithThisSecondUnit, final float startX, final float startY,
-			final Point2D.Float goal, final PathingGrid.MovementType movementType, final float collisionSize,
-			final boolean allowSmoothing, final CBehaviorMove queueItem) {
+								  final CUnit ignoreIntersectionsWithThisSecondUnit, final float startX, final float startY,
+								  final Vector2 goal, final PathingGrid.MovementType movementType, final float collisionSize,
+								  final boolean allowSmoothing, final CBehaviorMove queueItem) {
 		final int playerIndex = queueItem.getUnit().getPlayerIndex();
 		this.pathfindingProcessors[playerIndex].findNaiveSlowPath(ignoreIntersectionsWithThisUnit,
 				ignoreIntersectionsWithThisSecondUnit, startX, startY, goal, movementType, collisionSize,

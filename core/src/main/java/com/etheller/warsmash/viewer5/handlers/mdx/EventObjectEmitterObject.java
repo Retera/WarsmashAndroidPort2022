@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
@@ -33,21 +34,7 @@ public class EventObjectEmitterObject extends GenericObject implements EmitterOb
 
 		@Override
 		public Object call(final InputStream data) {
-			final FileHandle temp = new FileHandle(this.filename) {
-				@Override
-				public InputStream read() {
-					return data;
-				}
-
-				;
-			};
-			if (data != null) {
-				return Gdx.audio.newSound(temp);
-			}
-			else {
-				System.err.println("Warning: missing sound file: " + this.filename);
-				return null;
-			}
+			return Gdx.audio.newSound(Gdx.files.internal(this.filename.toLowerCase(Locale.US).replace('/', '\\').replace(':', '\\')));
 		}
 	}
 
