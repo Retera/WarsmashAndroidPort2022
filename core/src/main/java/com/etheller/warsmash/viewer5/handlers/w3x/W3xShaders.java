@@ -8,7 +8,7 @@ public class W3xShaders {
 		}
 
 		public static final String vert() {
-			return "\r\n" + //
+			return "precision mediump float;\r\n" + //
 					"\r\n" + //
 					"    uniform mat4 u_mvp;\r\n" + //
 					"    uniform sampler2D u_heightMap;\r\n" + //
@@ -67,7 +67,7 @@ public class W3xShaders {
 					" ";
 		}
 
-		public static final String frag = "\r\n" + //
+		public static final String frag = "precision mediump float;\r\n" + //
 				"    uniform sampler2D u_texture;\r\n" + //
 				"    uniform sampler2D u_shadowMap;\r\n" + //
 				"    uniform vec4 u_color;\r\n" + //

@@ -11,7 +11,7 @@ public class TerrainShaders {
 	static {
 		switch(Gdx.app.getType()) {
 			case Android:
-				VERSION_HEADER = "#version 300 es\r\n";
+				VERSION_HEADER = "#version 300 es\r\nprecision mediump float;\r\n";
 				break;
 			case Desktop:
 				VERSION_HEADER = "#version 430 core\r\n";
@@ -99,7 +99,7 @@ public class TerrainShaders {
 
 		public static final String frag = VERSION_HEADER + //
 				"\r\n" + //
-				"uniform sampler2DArray cliff_textures;\r\n" + //
+				"uniform mediump sampler2DArray cliff_textures;\r\n" + //
 				"uniform sampler2D shadowMap;\r\n" + //
 				"\r\n" + //
 				"uniform bool show_lighting;\r\n" + //
@@ -137,7 +137,7 @@ public class TerrainShaders {
 					"\r\n" + //
 					"uniform sampler2D height_texture;\r\n" + //
 					"uniform sampler2D height_cliff_texture;\r\n" + //
-					"uniform usampler2D terrain_texture_list;\r\n" + //
+					"uniform mediump usampler2D terrain_texture_list;\r\n" + //
 					"uniform float centerOffsetX;\r\n" + //
 					"uniform float centerOffsetY;\r\n" + //
 					"uniform sampler2D lightTexture;\r\n" + //
@@ -191,23 +191,23 @@ public class TerrainShaders {
 				"uniform bool show_pathing_map;\r\n" + //
 				"uniform bool show_lighting;\r\n" + //
 				"\r\n" + //
-				"uniform sampler2DArray sample0;\r\n" + //
-				"uniform sampler2DArray sample1;\r\n" + //
-				"uniform sampler2DArray sample2;\r\n" + //
-				"uniform sampler2DArray sample3;\r\n" + //
-				"uniform sampler2DArray sample4;\r\n" + //
-				"uniform sampler2DArray sample5;\r\n" + //
-				"uniform sampler2DArray sample6;\r\n" + //
-				"uniform sampler2DArray sample7;\r\n" + //
-				"uniform sampler2DArray sample8;\r\n" + //
-				"uniform sampler2DArray sample9;\r\n" + //
-				"uniform sampler2DArray sample10;\r\n" + //
-				"uniform sampler2DArray sample11;\r\n" + //
-				"uniform sampler2DArray sample12;\r\n" + //
-				"uniform sampler2DArray sample13;\r\n" + //
+				"uniform mediump sampler2DArray sample0;\r\n" + //
+				"uniform mediump sampler2DArray sample1;\r\n" + //
+				"uniform mediump sampler2DArray sample2;\r\n" + //
+				"uniform mediump sampler2DArray sample3;\r\n" + //
+				"uniform mediump sampler2DArray sample4;\r\n" + //
+				"uniform mediump sampler2DArray sample5;\r\n" + //
+				"uniform mediump sampler2DArray sample6;\r\n" + //
+				"uniform mediump sampler2DArray sample7;\r\n" + //
+				"uniform mediump sampler2DArray sample8;\r\n" + //
+				"uniform mediump sampler2DArray sample9;\r\n" + //
+				"uniform mediump sampler2DArray sample10;\r\n" + //
+				"uniform mediump sampler2DArray sample11;\r\n" + //
+				"uniform mediump sampler2DArray sample12;\r\n" + //
+				"uniform mediump sampler2DArray sample13;\r\n" + //
 //				"uniform sampler2DArray sample14;\r\n" + //
 //				"uniform sampler2DArray sample15;\r\n" + //
-				"uniform sampler2DArray sample16;\r\n" + //
+				"uniform mediump sampler2DArray sample16;\r\n" + //
 				"\r\n" + //
 //				"layout (binding = 20) uniform usampler2D pathing_map_static;\r\n" + //
 //				"layout (binding = 21) uniform usampler2D pathing_map_dynamic;\r\n" + //
@@ -373,7 +373,7 @@ public class TerrainShaders {
 
 		public static final String frag = VERSION_HEADER + //
 				"\r\n" + //
-				"uniform sampler2DArray water_textures;\r\n" + //
+				"uniform mediump sampler2DArray water_textures;\r\n" + //
 				"uniform sampler2D water_exists_texture;\r\n" + //
 				"\r\n" + //
 				"\r\n" + //
