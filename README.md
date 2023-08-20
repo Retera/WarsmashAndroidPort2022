@@ -1,5 +1,13 @@
 # Warsmash3Phone
 
+This project is NOT UNDER ACTIVE DEVELOPMENT and will NOT be supported!
+
+This project is a 2022 parody of Warsmash created by Retera originally in private that is capable of running on some Android devices.
+In the summer of 2022, after the Arclight Rumble Mobile for Warcraft was announced, as a form of self-parody or perhaps dark humor I ported the work in progress Java based Warcraft 3 emulator "Warsmash" so that it would run on Android devices.
+This allowed me to create YouTube videos of myself holding a phone with what would appear to be Warcraft 3 on the phone in private, mostly to make parody videos about Arclight Rumble such as the following (Warning: video contains explicit language!):
+[![GAMEPLAY VIDEO](http://img.youtube.com/vi/oE8-DJ2EhYs/0.jpg)](https://www.youtube.com/watch?v=oE8-DJ2EhYs)
+
+
 A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/tommyettinger/gdx-liftoff).
 
 This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
